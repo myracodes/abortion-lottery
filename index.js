@@ -66,7 +66,7 @@ const maluses = [{
 ];
 
 
-//illégal= -200pts // sous conditions= -50pts // droit récent= +0pt // droit ancré= 100pts // nb de semaines plus long= 150pts
+//illégal= -200pts // sous conditions= -50pts // droit récent= +0pt // ancré= 100pts // nb de semaines++ = 150pts
 const countries = [{
         name: "Afghanistan, -100pt", // toléré si danger pour la vie de la mère
         points: -100
@@ -225,6 +225,7 @@ function generatesCountry() {
     player.points += player.country.points;
     countriesBlock.innerHTML = 'Living in ' + player.country.name;
 }
+
 /**
  * x generates points in the beginning depending on your Prosperity
  * x adds points to player.points
@@ -234,6 +235,7 @@ function generatesProsperity() {
     player.points += player.wealth.points;
     prosperityBlock.innerHTML = player.wealth.wealth;
 }
+
 /**
  * x generates points depending on the number of weeks of pregnancy
  * x adds points to player.points
@@ -311,7 +313,6 @@ function stringToNumber(string) {
     let stringWithoutPx = string.replace('px', '');
     return parseInt(stringWithoutPx);
 }
-
 
 /**
  *  x calls two other functions: generateBonus and generatemalus
